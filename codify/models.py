@@ -47,7 +47,23 @@ class Course(models.Model):
     price = models.IntegerField(null=True, blank=True)
     def __str__(self):
         return self.name
+    age_category = models.IntegerField(default=0, choices=(
     
+            (1, '6-10'),
+            (2, '10-14'),
+            (3, '10-16'),
+        ))
+
+    category = models.ForeignKey(
+        
+        to=CourseCategory,
+        on_delete=models.CASCADE
+    )
+    
+    image = models.ImageField(upload_to="Course", null=True, blank=True, verbose_name="advantages")
+ 
+
+}
     
     
     
