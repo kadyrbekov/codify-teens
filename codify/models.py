@@ -31,6 +31,9 @@ class CourseCategory(models.Model):
         verbose_name = 'Категории курсов'
         verbose_name_plural = 'Категории курсов'
 
+    def __str__(self):
+        return self.name
+
 class Course(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField(null=False)
@@ -46,11 +49,7 @@ class Course(models.Model):
     price = models.IntegerField(null=True, blank=True)
     def __str__(self):
         return self.name
-    
-    
-    
-    
-    
+
     class Meta:
         verbose_name = 'Курс'
         verbose_name_plural = 'Курсы'
@@ -65,8 +64,6 @@ class Contact(models.Model):
     twitter = models.CharField(max_length=55)
     facebook = models.CharField(max_length=55)
 
-    def __str__(self):
-        return self.name
 
     class Meta:
         verbose_name = 'Контакты'
@@ -74,6 +71,28 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.phone_number
+
+
+
+class Mentor(models.Model):
+    specialty = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
+    description = models.TextField(null=True)
+    image = models.ImageField(upload_to="mentor", null=True, blank=True, verbose_name="mentor")
+    course = models.ForeignKey(
+        to=Course,
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+    )
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Ментора'
+        verbose_name_plural = 'Менторы'
+
 
 
 class Application(models.Model):
