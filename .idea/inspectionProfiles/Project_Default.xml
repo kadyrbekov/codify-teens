@@ -1,0 +1,27 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E302" />
+          <option value="E303" />
+          <option value="W292" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="rest_framework.serializer" />
+          <option value="dish.models.Dish.objects" />
+          <option value="books.store.models.Book.objects" />
+          <option value="django.url" />
+          <option value="order.views.status" />
+          <option value="order.models.Order.objects" />
+          <option value="factory.ModelFactory" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
