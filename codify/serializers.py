@@ -4,7 +4,7 @@ from .models import *
 class AboutUsSerializer(serializers.ModelSerializer):
     class Meta:
         model = AboutUs
-        fields = ('name', 'description', 'name')
+        fields = ('name', 'description', )
 
 class AdvantagesSerializer(serializers.ModelSerializer):
     class Meta:
