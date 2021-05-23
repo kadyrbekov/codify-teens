@@ -26,11 +26,11 @@ urlpatterns = [
     path('Feedback/', FeedbackList.as_view(), name='feedback-list-create'),
     path('Feedback/<int:pk>/', FeedbackDetail.as_view(), name='feedback'),
 
-    path('CategoryEvent/', CategoryEventList.as_view(), name='category_event-list-create'),
-    path('CategoryEvent/<int:pk>/', CategoryEventDetail.as_view(), name='category_event'),
+    path('category-event/', CategoryEventList.as_view(), name='category_event-list-create'),
+    path('category-event/<int:pk>/', CategoryEventDetail.as_view(), name='category_event'),
 
-    path('Event/', EventList.as_view(), name='event-list-create'),
-    path('Event/<int:pk>/', EventDetail.as_view(), name='event'),
+    path('event/', EventList.as_view(), name='event-list-create'),
+    path('event/<int:pk>/', EventDetail.as_view(), name='event'),
 
     path('FAQ/', FAQList.as_view(), name='FAQ-list-create'),
     path('FAQ/<int:pk>/', FAQDetail.as_view(), name='FAQ'),
