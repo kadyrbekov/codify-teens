@@ -4,36 +4,23 @@ from .models import *
 class AboutUsSerializer(serializers.ModelSerializer):
     class Meta:
         model = AboutUs
-<<<<<<< HEAD
-        fields = ('name', 'description', )
-=======
         fields = ('id', 'name', 'description', )
->>>>>>> view
 
 class AdvantagesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Advantages
-<<<<<<< HEAD
-        fields = ('name', 'description', 'name')
-=======
         fields = ('id', 'name', 'description', 'name')
->>>>>>> view
-#
+
 class CourseCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = CourseCategory
-<<<<<<< HEAD
-        fields = ('name',)
-=======
         fields = ('id', 'name',)
->>>>>>> view
-#
+
 class CourseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Course
         fields = ('id', 'name', 'description', 'duration', 'price')
-#
-#
+
 class ContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contact
@@ -72,8 +59,4 @@ class EventSerializer(serializers.ModelSerializer):
 class FAQSerializer(serializers.ModelSerializer):
     class Meta:
         model = FAQ
-<<<<<<< HEAD
         exclude = ('',)
-=======
-        exclude = ('',)
->>>>>>> view

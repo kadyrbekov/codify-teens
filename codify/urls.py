@@ -8,23 +8,23 @@ urlpatterns = [
     path('advantages/', AdvantagesListView.as_view(), name='advantages-list-create'),
     path('advantages/<int:pk>/', AdvantagesDetailView.as_view(), name='advantages'),
 
-    path('CourseCategory/', CourseCategoryList.as_view(), name='course_category-list-create'),
-    path('CourseCategory/<int:pk>/', CourseCategoryDetail.as_view(), name='course_category'),
+    path('course-category/', CourseCategoryList.as_view(), name='course_category-list-create'),
+    path('course-category/<int:pk>/', CourseCategoryDetail.as_view(), name='course_category'),
     #
-    path('Course/', CourseList.as_view(), name='course-list-create'),
+    path('course/', CourseList.as_view(), name='course-list-create'),
     path('course/<int:pk>/', CourseDetail.as_view(), name='course'),
 
-    path('Contact/', ContactList.as_view(), name='contact-list-create'),
-    path('Contact/<int:pk>/', ContactDetail.as_view(), name='contact'),
+    path('contact/', ContactList.as_view(), name='contact-list-create'),
+    path('contact/<int:pk>/', ContactDetail.as_view(), name='contact'),
 
-    path('Mentor/', MentorList.as_view(), name='mentor-list-create'),
-    path('Mentor/<int:pk>/', MentorDetail.as_view(), name='mentor'),
+    path('mentor/', MentorList.as_view(), name='mentor-list-create'),
+    path('mentor/<int:pk>/', MentorDetail.as_view(), name='mentor'),
 
-    path('Application/', ApplicationList.as_view(), name='application-list-create'),
-    path('Application/<int:pk>/', ApplicationDetail.as_view(), name='application'),
+    path('application/', ApplicationList.as_view(), name='application-list-create'),
+    path('application/<int:pk>/', ApplicationDetail.as_view(), name='application'),
 
-    path('Feedback/', FeedbackList.as_view(), name='feedback-list-create'),
-    path('Feedback/<int:pk>/', FeedbackDetail.as_view(), name='feedback'),
+    path('feedback/', FeedbackList.as_view(), name='feedback-list-create'),
+    path('feedback/<int:pk>/', FeedbackDetail.as_view(), name='feedback'),
 
     path('category-event/', CategoryEventList.as_view(), name='category_event-list-create'),
     path('category-event/<int:pk>/', CategoryEventDetail.as_view(), name='category_event'),
