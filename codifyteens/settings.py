@@ -39,10 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'codify',
-<<<<<<< HEAD
-    ''
-=======
->>>>>>> view
     'rest_framework',
 ]
 
