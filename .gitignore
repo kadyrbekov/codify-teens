@@ -1,4 +1,6 @@
-
+media
 venv
+.idea/
+venv38/
+venv/
 .idea
-venv38

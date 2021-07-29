@@ -324,45 +324,6 @@ class FeedbackDetail(APIView):
         return Response(data={'message': 'Обьект был удален'})
 
 
-class CategoryEventList(APIView):
-
-    def get(self, request, *args, **kwargs):
-        category_event = CategoryEvent.objects.all()
-        serializer = CategoryEventSerializer(category_event, many=True)
-        return Response(data=serializer.data)
-
-    def post(self, request, *args, **kwargs):
-        serializer = CategoryEventSerializer(data=request.POST)
-        if serializer.is_valid():
-            category_event = serializer.save()
-            json_serializer = CategoryEventSerializer(instance=category_event)
-            return Response(data=json_serializer.data, status=201)
-        return Response(data=serializer.errors)
-
-class CategoryEventDetail(APIView):
-
-    def get(self, request, *args, **kwargs):
-        try:
-            category_event = CategoryEvent.objects.get(pk=kwargs.get('pk'))
-        except CategoryEvent.DoesNotExist as e:
-            return Response(data={"message": f'CategoryEvent was not found: {e}'}, status=404)
-
-        serializer = CategoryEventSerializer(instance=category_event)
-        return Response(data=serializer.data)
-
-    def put(self, request, *args, **kwargs):
-        category_event = CategoryEvent.objects.get(pk=kwargs.get('pk'))
-        serializer = CategoryEventSerializer(instance=category_event, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-
-
-    def delete(self, request, *args, **kwargs):
-        category_event = CategoryEvent.objects.get(pk=kwargs.get('pk'))
-        category_event.delete()
-        return Response(data={'message': 'Обьект был удален'})
-
 class EventList(APIView):
 
     def get(self, request, *args, **kwargs):
@@ -425,12 +386,12 @@ class FAQDetail(APIView):
         except FAQ.DoesNotExist as e:
             return Response(data={"message": f'FAQ was not found: {e}'}, status=404)
 
-        serializer = FAQSerializer(instance=faq)
+        serializer = FAQCourseSerializer(instance=faq)
         return Response(data=serializer.data)
 
     def put(self, request, *args, **kwargs):
         faq = FAQ.objects.get(pk=kwargs.get('pk'))
-        serializer = FAQSerializer(instance=faq, data=request.data)
+        serializer = FAQCourseSerializer(instance=faq, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -440,4 +401,46 @@ class FAQDetail(APIView):
         faq = FAQ.objects.get(pk=kwargs.get('pk'))
         faq.delete()
         return Response(data={'message': 'Обьект был удален'})
+
+class FAQCourseList(APIView):
+
+    def get(self, request, *args, **kwargs):
+        faq = FAQCourse.objects.all()
+        serializer = FAQCourseSerializer(faq, many=True)
+        return Response(data=serializer.data)
+
+    def post(self, request, *args, **kwargs):
+        serializer = FAQCourseSerializer(data=request.POST)
+        if serializer.is_valid():
+            faq = serializer.save()
+            json_serializer = FAQCourseSerializer(instance=faq)
+            return Response(data=json_serializer.data, status=201)
+        return Response(data=serializer.errors)
+
+class FAQCourseDetail(APIView):
+
+    def get(self, request, *args, **kwargs):
+        try:
+            faq = FAQCourse.objects.get(pk=kwargs.get('pk'))
+        except FAQCourse.DoesNotExist as e:
+            return Response(data={"message": f'FAQ was not found: {e}'}, status=404)
+
+        serializer = FAQSerializer(instance=faq)
+        return Response(data=serializer.data)
+
+    def put(self, request, *args, **kwargs):
+        faq = FAQCourse.objects.get(pk=kwargs.get('pk'))
+        serializer = FAQCourseSerializer(instance=faq, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+
+
+    def delete(self, request, *args, **kwargs):
+        faq = FAQCourse.objects.get(pk=kwargs.get('pk'))
+        faq.delete()
+        return Response(data={'message': 'Обьект был удален'})
+
+
+
 

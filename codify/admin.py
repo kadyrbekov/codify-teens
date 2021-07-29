@@ -11,7 +11,7 @@ class CourseAdmin(admin.ModelAdmin):
         model = Course
     
 
-models = [AboutUs, Advantages, Course, Contact, Application, Feedback, Mentor, Event, CategoryEvent, FAQ]
+models = [AboutUs, Advantages, Course, Contact, Application, Feedback, Mentor, Event, FAQ, FAQCourse, ]
 admin.site.register(models)
 
 

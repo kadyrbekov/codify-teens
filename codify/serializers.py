@@ -4,12 +4,12 @@ from .models import *
 class AboutUsSerializer(serializers.ModelSerializer):
     class Meta:
         model = AboutUs
-        fields = ('id', 'name', 'description', )
+        exclude = ()
 
 class AdvantagesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Advantages
-        fields = ('id', 'name', 'description', 'name')
+        fields = ('id', 'name', 'description', 'image')
 
 class CourseCategorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -19,44 +19,44 @@ class CourseCategorySerializer(serializers.ModelSerializer):
 class CourseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Course
-        fields = ('id', 'name', 'description', 'duration', 'price')
+        exclude = ()
 
 class ContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contact
-        exclude = ('',)
+        exclude = ()
 
 class MentorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Mentor
-        exclude = ('',)
+        exclude = ()
 #
 #
 class ApplicationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Application
-        exclude = ('',)
+        exclude = ()
 
 
 class FeedbackSerializer(serializers.ModelSerializer):
     class Meta:
         model = Feedback
-        exclude = ('',)
+        exclude = ()
 
-
-class CategoryEventSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = CategoryEvent
-        fields = ('id', 'name',)
 
 
 class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
-        exclude = ('',)
+        exclude = ()
 
 
 class FAQSerializer(serializers.ModelSerializer):
     class Meta:
         model = FAQ
-        exclude = ('',)
+        exclude = ()
+
+class FAQCourseSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FAQ
+        exclude = ()
